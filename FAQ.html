@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Emerald.com</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!--header-->
+  <div class="banner-container">
+    <img src="em.jpg" alt="banner">
+    <div class="banner-text">Emerald</div>
+    <div class="link">
+      <div style="display: flex; align-items: center; gap: 5px;">
+        <img src="logo.jpg" alt="Logo" style="height: 70px; width: 70px; border-radius: 50%;">
+        <input type="text" id="searchInput" placeholder="Search..." style="
+          padding: 10px 20px;
+          border: none;
+          border-radius: 50px;
+          width:300px;
+        ">
+      </div>
+      <!--menu-->
+      <div style="display: flex; gap: 15px;">
+        <a href="index.html">Home</a>
+        <a href="about_us.html">About Us</a>
+        <a href="policies.html">Policies</a>
+        <a href="contact_us.html">contact-us</a>
+        <div class="dropdown">
+          <a href="categories.html" class="dropbtn">Categories ▼</a>
+          <div class="dropdown-content">
+            <a href="rings.html">Rings</a>
+            <a href="earring.html">Earrings</a>
+            <a href="necklace.html">Necklaces</a>
+            <a href="bracelets.html">Bracelets</a>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+<!--faq content-->
+<h2 style="text-align: center; color:rgb(3, 110, 84);">Frequently Asked Questions</h2>
+
+<hr>
+<div style="max-width: 700px; margin: auto; padding: 20px; font-family: Arial, sans-serif;">
+  <div style="margin-bottom: 20px;">
+    <button onclick="toggleAnswer('faq1')" style="float: right;">+</button>
+    <p class="searchable"><strong style="color:rgb(3, 110, 84);">What types of products are available?</strong></p>
+    <p  id="faq1" style="display: none;">We offer products across multiple categories like clothing, electronics, and more.</p>
+  </div>
+
+  <div style="margin-bottom: 20px;">
+    <button onclick="toggleAnswer('faq2')" style="float: right;">+</button>
+    <p class="searchable"><strong style="color:rgb(3, 110, 84);">Is my personal and payment information secure?</strong></p>
+    <p  id="faq2" style="display: none;">Yes, we use industry-standard encryption and secure payment gateways to protect your data.</p>
+  </div>
+  <div style="margin-bottom: 20px;">
+    <button onclick="toggleAnswer('faq3')" style="float: right;">+</button>
+    <p class="searchable"><strong style="color:rgb(3, 110, 84);">How long will delivery take?</strong></p>
+    <p  id="faq3" style="display: none;">Orders are usually delivered within 3–5 business days.</p>
+  </div>
+   <div style="margin-bottom: 20px;">
+    <button onclick="toggleAnswer('faq4')" style="float: right;">+</button>
+    <p class="searchable"><strong style="color:rgb(3, 110, 84);">Are the stones in your jewelry real?</strong></p>
+    <p  id="faq4" style="display: none;">We offer both real and lab-created gemstones. The product description clearly states the type of stone used.</p>
+  </div>
+  <div style="margin-bottom: 20px;">
+    <button onclick="toggleAnswer('faq5')" style="float: right;">+</button>
+    <p class="searchable"><strong style="color:rgb(3, 110, 84);">Are the stones in your jewelry real?</strong></p>
+    <p  id="faq5" style="display: none;">We offer both real and lab-created gemstones. The product description clearly states the type of stone used.</p>
+  </div>
+
+  <div style="margin-bottom: 20px;">
+    <button onclick="toggleAnswer('faq6')" style="float: right;">+</button>
+    <p class="searchable"><strong style="color:rgb(3, 110, 84);">How do I care for my jewelry?</strong></p>
+    <p  id="faq6" style="display: none;">Keep your jewelry dry and avoid contact with perfumes or harsh chemicals. Store in a soft pouch when not in use.</p>
+  </div>
+</div>
+
+<!--js function for the + button-->
+
+<script>
+  function toggleAnswer(id) {
+    const answer = document.getElementById(id);
+    answer.style.display = (answer.style.display === "none") ? "block" : "none";
+  }
+</script>
+<!--footer-->
+<footer>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about_us.html">About Us</a>
+      <a href="contact_us.html">Contact Us</a>
+      <a href="policies.html">Policies</a>
+      <a href="FAQ.html">FAQs</a>
+    </nav>
+    <p>&copy; 2025 emerald. All Rights Reserved.</p>
+    <p>Contact us at <a href="mailto:info@emerald_official.com" style="color: lightblue;">info@emerald_official.com</a> | 📞 +92 xxx xxxxxxx</p>
+  </footer>
+ <!--javascript for search function-->
+<script>
+  document.getElementById('searchInput').addEventListener('input', function () {
+    const query = this.value.toLowerCase();
+    const items = document.querySelectorAll('.searchable');
+
+    items.forEach(item => {
+      const text = item.textContent.toLowerCase();
+      if (text.includes(query)) {
+        item.style.display = '';
+      } else {
+        item.style.display = 'none';
+      }
+    });
+  });
+</script>
+</body>
+</html>
