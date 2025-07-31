@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Emerald.com</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <div class="banner-container">
+    <img src="em.jpg" alt="banner">
+    <div class="banner-text">Emerald</div>
+    <div class="link">
+      <div style="display: flex; align-items: center; gap: 10px;">
+        <img src="logo.jpg" alt="Logo" style="height: 70px; width: 70px; border-radius: 50%;">
+        <input type="text" id="searchInput" placeholder="Search..." style="padding: 10px 20px; border: none; border-radius: 50px; width: 300px;">
+      </div>
+      <div style="display: flex; gap: 15px;">
+        <a href="index.html">Home</a>
+        <a href="about_us.html">About Us</a>
+        <a href="policies.html">Policies</a>
+        <a href="contact_us.html">contact-us</a>
+        <div class="dropdown">
+          <a class="dropbtn">Categories ▼</a>
+          <div class="dropdown-content">
+            <a href="rings.html">Rings</a>
+            <a href="earring.html">Earrings</a>
+            <a href="necklace.html">Necklaces</a>
+            <a href="bracelets.html">Bracelets</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Ring Products -->
+  <h2 class="name">Earrings</h2>
+  <hr>
+
+  <div class="product-grid-category">
+    <div class="product-card-category searchable">
+      <img src="earring_1.jpg">
+      <p>Peacock</p>
+      <p>Rs 800</p>
+      <button><a href="earring_1.html">View</a></button>
+    </div>
+
+    <div class="product-card-category searchable">
+      <img src="earring_2.jpg">
+      <p>star</p>
+      <p>Rs 800</p>
+      <button><a href="earring_2.html">View</a></button>
+    </div>
+
+    <div class="product-card-category searchable">
+      <img src="earring_3.jpg">
+      <p>Circe</p>
+      <p>Rs 800</p>
+      <button><a href="earring_3.html">View</a></button>
+    </div>
+
+    <div class="product-card-category searchable">
+      <img src="earring_4.jpg">
+      <p>Brooch</p>
+      <p>Rs 800</p>
+      <button><a href="earring_4.html">View</a></button>
+    </div>
+
+    <div class="product-card-category searchable">
+      <img src="earring_5.jpg">
+      <p>Circle</p>
+      <p>Rs 800</p>
+      <button><a href="earring_5.html">View</a></button>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about_us.html">About Us</a>
+      <a href="contact_us.html">Contact Us</a>
+      <a href="policies.html">Policies</a>
+      <a href="FAQ.html">FAQs</a>
+    </nav>
+    <p>&copy; 2025 Emerald. All Rights Reserved.</p>
+    <p>Contact us at <a href="mailto:info@emerald_official.com"style="color: lightblue;">info@emerald_official.com</a> | 📞 +92 xxx xxxxxxx</p>
+  </footer>
+  <script>
+  document.getElementById('searchInput').addEventListener('input', function () {
+    const query = this.value.toLowerCase();
+    const items = document.querySelectorAll('.searchable');
+
+    items.forEach(item => {
+      const text = item.textContent.toLowerCase();
+      if (text.includes(query)) {
+        item.style.display = '';
+      } else {
+        item.style.display = 'none';
+      }
+    });
+  });
+</script>
+
+</body>
+</html>
