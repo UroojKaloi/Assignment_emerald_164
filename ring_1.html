@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Emerald.com</title>
+  <link rel="stylesheet" href="style.css">
+  <script>
+  function orderNow(productName, price) {
+    // Store the order in localStorage
+    let orders = JSON.parse(localStorage.getItem("orders")) || [];
+    orders.push({ name: productName, price: price });
+    localStorage.setItem("orders", JSON.stringify(orders));
+
+    // Redirect to order.html
+    window.location.href = "order.html";
+  }
+</script>
+
+</head>
+<body>
+  <!--header-->
+  <div class="banner-container">
+    <img src="em.jpg" alt="banner">
+    <div class="banner-text">Emerald</div>
+    <div class="link">
+      <div style="display: flex; align-items: center; gap: 5px;">
+        <img src="logo.jpg" alt="Logo" style="height: 70px; width: 70px; border-radius: 50%;">
+        <input type="text" id="searchInput" placeholder="Search..." style="
+          padding: 10px 20px;
+          border: none;
+          border-radius: 50px;
+          width:300px;">
+      </div>
+      <!--menu-->
+      <div style="display: flex; gap: 15px;">
+        <a href="index.html">Home</a>
+        <a href="about_us.html">About Us</a>
+        <a href="policies.html">Policies</a>
+        <a href="contact_us.html">contact-us</a>
+        <div class="dropdown">
+          <a href="categories.html" class="dropbtn">Categories ▼</a>
+          <div class="dropdown-content">
+            <a href="rings.html">Rings</a>
+            <a href="earring.html">Earrings</a>
+            <a href="necklace.html">Necklaces</a>
+            <a href="bracelets.html">Bracelets</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+
+<!-- Bracelet Details Section -->
+<div class="individual searchable">
+  <!-- Image on the left -->
+  <img src="ring1.jpg">
+
+  <!-- Details + Button on the right -->
+  <div class="indi">
+    <ul>
+        <Li><h2>Hold</h2></Li>
+      <li><strong>Price:</strong>Rs 1000</li>
+      <li><strong>Material:</strong> Gold</li>
+      <li><strong>Description:</strong>chunky gold ring set with a large centere emerald.</li>
+    </ul>
+    <button onclick="orderNow('Hold', 1000)">
+      Order Now
+    </button>
+  </div>
+</div>
+<hr>
+<h2 class="name">Similar Products</h2>
+<div class="scroll-gallery">
+  
+  <div class="product-card searchable">
+      <img src="ring_2.jpg">
+      <div class="name">Elain</div>
+      <div class="price">Rs 1000</div>
+      <a href="ring_2.html" class="btn">View</a>
+    </div>
+    <div class="product-card searchable">
+      <img src="ring_3.jpg">
+      <div class="name">Enchanted</div>
+      <div class="price">Rs 1000</div>
+      <a href="ring_3.html" class="btn">View</a>
+    </div>
+    <div class="product-card searchable">
+      <img src="ring_4.jpg" >
+      <div class="name">Trio</div>
+      <div class="price">Rs 1000</div>
+      <a href="ring_4.html" class="btn">View</a>
+    </div>
+    <div class="product-card searchable">
+      <img src="ring_5.jpg">
+      <div class="name">Bree</div>
+      <div class="price">Rs 1000</div>
+      <a href="ring_5.html" class="btn">View</a>
+    </div>
+
+</div>
+
+
+
+  <!--footer-->    
+  <footer>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about_us.html">About Us</a>
+      <a href="contact_us.html">Contact Us</a>
+      <a href="policies.html">Policies</a>
+      <a href="FAQ.html">FAQs</a>
+    </nav>
+    <p>&copy; 2025 emerald. All Rights Reserved.</p>
+    <p>Contact us at <a href="mailto:info@emerald_official.com" style="color: lightblue;">info@emerald_official.com</a> | 📞 +92 xxx xxxxxxx</p>
+  </footer>
+  <script>
+  document.getElementById('searchInput').addEventListener('input', function () {
+    const query = this.value.toLowerCase();
+    const items = document.querySelectorAll('.searchable');
+
+    items.forEach(item => {
+      const text = item.textContent.toLowerCase();
+      if (text.includes(query)) {
+        item.style.display = '';
+      } else {
+        item.style.display = 'none';
+      }
+    });
+  });
+</script>
+</body>
+</html>

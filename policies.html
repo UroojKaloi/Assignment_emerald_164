@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Emerald.com</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!--header-->
+  <div class="banner-container">
+    <img src="em.jpg" alt="banner">
+    <div class="banner-text">Emerald</div>
+    <div class="link">
+      <div style="display: flex; align-items: center; gap: 5px;">
+        <img src="logo.jpg" alt="Logo" style="height: 70px; width: 70px; border-radius: 50%;">
+        <input type="search" id="searchInput" placeholder="Search..." style="
+          padding: 10px 20px;
+          border: none;
+          border-radius: 50px;
+          width:300px;
+        ">
+      </div>
+      <!--menu-->
+      <div style="display: flex; gap: 15px;">
+        <a href="index.html">Home</a>
+        <a href="about_us.html">About Us</a>
+        <a href="policies.html">Policies</a>
+        <a href="contact_us.html">contact-us</a>
+        <div class="dropdown">
+          <a href="categories.html" class="dropbtn">Categories ▼</a>
+          <div class="dropdown-content">
+            <a href="rings.html">Rings</a>
+            <a href="earring.html">Earrings</a>
+            <a href="necklace.html">Necklaces</a>
+            <a href="bracelets.html">Bracelets</a>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+<!--policies content-->
+<h2 class="name">Policies</h2>
+<hr>
+
+  <ul  class="policyul">
+    <li  class="searchable"><strong>Secure Payments:</strong> All transactions are encrypted and processed through trusted gateways.</li>
+    <li class="searchable"><strong >Customer Privacy:</strong> We never share or sell your personal information. Your data stays safe with us.</li>
+    <li class="searchable"><strong >Return Policy:</strong> Products can be returned within 7 days of delivery if unopened or damaged.</li>
+    <li class="searchable"><strong >Refunds:</strong> Approved refunds are processed within 5–7 business days to your original payment method.</li>
+    <li class="searchable"><strong >Shipping:</strong> Orders are shipped within 2–3 business days. Delays due to holidays or weather will be communicated.</li>
+   <li class="searchable"><strong>Shipping Policy:</strong> We offer nationwide shipping via trusted courier services. Orders are dispatched within 2 business days and typically arrive in 3–5 working days.</li>
+    <li class="searchable"><strong>Product Authenticity:</strong> All our products are genuine and thoroughly inspected before shipment to ensure the highest quality.</li>
+    <li class="searchable"><strong>Cancellation Policy:</strong> Orders can be canceled within 24 hours of placement. After this period, orders are processed and cannot be canceled.</li>
+    <li class="searchable"><strong>Damaged Items:</strong> If your item arrives damaged, please contact us within 48 hours with photographic proof for a replacement or refund.</li>
+</ul>
+
+<!--footer-->
+<footer>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about_us.html">About Us</a>
+      <a href="contact_us.html">Contact Us</a>
+      <a href="policies.html">Policies</a>
+      <a href="FAQ.html">FAQs</a>
+    </nav>
+    <p>&copy; 2025 emerald. All Rights Reserved.</p>
+    <p>Contact us at <a href="mailto:info@emerald_official.com" style="color: lightblue;">info@emerald_official.com</a> | 📞 +92 xxx xxxxxxx</p>
+  </footer>
+  <!--javascript for search function-->
+<script>
+  document.getElementById('searchInput').addEventListener('input', function () {
+    const query = this.value.toLowerCase();
+    const items = document.querySelectorAll('.searchable');
+
+    items.forEach(item => {
+      const text = item.textContent.toLowerCase();
+      if (text.includes(query)) {
+        item.style.display = '';
+      } else {
+        item.style.display = 'none';
+      }
+    });
+  });
+</script>
+
+</body>
+</html>

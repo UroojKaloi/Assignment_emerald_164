@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Emerald.com</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!--header-->
+  <div class="banner-container">
+    <img src="em.jpg" alt="banner">
+    <div class="banner-text">Emerald</div>
+    <div class="link">
+      <div style="display: flex; align-items: center; gap: 5px;">
+        <img src="logo.jpg" alt="Logo" style="height: 70px; width: 70px; border-radius: 50%;">
+        <input type="text" id="searchInput" placeholder="Search..." style="
+          padding: 10px 20px;
+          border: none;
+          border-radius: 50px;
+          width:300px;
+        ">
+      </div>
+      <!--menu-->
+      <div style="display: flex; gap: 15px;">
+        <a href="index.html">Home</a>
+        <a href="about_us.html">About Us</a>
+        <a href="policies.html">Policies</a>
+        <a href="contact_us.html">contact-us</a>
+        <div class="dropdown">
+          <a href="categories.html" class="dropbtn">Categories ▼</a>
+          <div class="dropdown-content">
+            <a href="rings.html">Rings</a>
+            <a href="earring.html">Earrings</a>
+            <a href="necklace.html">Necklaces</a>
+            <a href="bracelets.html">Bracelets</a>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+  <h2 class="name">Your Order</h2>
+  <hr>
+  <div class="center-container">
+    <div class="form-box">
+        <form class="orderform" >
+  <label>Name</label>
+  <input  type="text" name="name" placeholder="Your Name" required>
+  <br>
+  <label>Address</label>
+  <input type="text" name="address" placeholder="Shipping Address" required>
+  <br>
+  <button>Confirm Order</button>
+</form>
+<ul id="orderList"></ul>
+  <p ><strong>Total:</strong> <span id="totalPrice">0</span></p>
+    </div>
+  </div>
+
+
+  
+
+  <script>
+    // Load orders from localStorage
+    const orders = JSON.parse(localStorage.getItem("orders")) || [];
+    const orderList = document.getElementById("orderList");
+    const totalPriceSpan = document.getElementById("totalPrice");
+
+    let total = 0;
+    orders.forEach(order => {
+      const li = document.createElement("li");
+      li.textContent = `${order.name} - Rs ${order.price}`;
+      orderList.appendChild(li);
+      total += order.price;
+    });
+
+    totalPriceSpan.textContent = "Rs " + total;
+  </script>
+</body>
+</html>
+
+<!--footer-->
+<footer>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about_us.html">About Us</a>
+      <a href="contact_us.html">Contact Us</a>
+      <a href="policies.html">Policies</a>
+      <a href="FAQ.html">FAQs</a>
+    </nav>
+    <p>&copy; 2025 emerald. All Rights Reserved.</p>
+    <p>Contact us at <a href="mailto:info@emerald_official.com" style="color: lightblue;">info@emerald_official.com</a> | 📞 +92 xxx xxxxxxx</p>
+  </footer>
+  <script>
+  document.getElementById('searchInput').addEventListener('input', function () {
+    const query = this.value.toLowerCase();
+    const items = document.querySelectorAll('.searchable');
+
+    items.forEach(item => {
+      const text = item.textContent.toLowerCase();
+      if (text.includes(query)) {
+        item.style.display = '';
+      } else {
+        item.style.display = 'none';
+      }
+    });
+  });
+</script>
+</body>
